@@ -1,0 +1,206 @@
+<template>
+  <v-app>
+    <v-main class="white">
+      <v-container>
+        <v-row align="center">
+          <v-col cols="12"
+                 sm="6"
+                 class="mb-5 mb-sm-0">
+            <span class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</span>
+            <span class="d-block my-5">
+              Ainda estou na barriga da mamãe 🤰, mas já dá pra ver que sou a carinha do papai 🦸‍️.
+              E tá tudo bem, porque a mamãe acha o papai lindo 😍, como ela mesma diz o tempo todo.
+              Devo chegar lá pelo dia 15 de julho.
+            </span>
+          </v-col>
+          <v-col cols="12" sm="6">
+
+            <v-carousel cycle hide-delimiters>
+              <v-carousel-item v-for="foto in fotos" :src="foto.src" cover></v-carousel-item>
+            </v-carousel>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container class="bg-orange-lighten-4">
+        Como você pode imaginar, vou precisar de muitas fraldas nesses primeiros anos de vida. Então, se quiser ajudar
+        minha mamãe e meu papai, veja a listinha de fraldas e faça um pix 🙊
+      </v-container>
+
+      <v-container>
+            <h2 class="d-block pa-5 mb-5 gochi-hand-regular bg-eric rounded-5 text-center">Minha Listinha</h2>
+        <v-row>
+          <v-col cols="12"
+                 md="4"
+                 sm="6"
+                 v-for="presente in presentes"
+                 :key="presente.nome">
+            <presente :presente="presente"></presente>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+
+    <v-footer app
+              class="button py-0 bg-grey-lighten-4"
+              v-if="valor">
+      <v-container>
+        <v-row>
+          <v-col cols="12"
+                 class="d-flex flex-column flex-sm-row">
+            <div class="flex-grow-1  mr-sm-2 rounded text-center">
+              <span class="d-inline-block  font-weight-bold">{{ total }}</span>
+            </div>
+            <v-btn class="mb-2 mb-md-0 mr-2 white--text font-weight-bold"
+                   color="green"
+                   elevation="0"
+                   @click="linkPix">Fazer um Pix</v-btn>
+            <v-btn class="mb-2 mb-md-0 mr-md-2 font-weight-bold"
+                   color="grey-lighten-2"
+                   outlined
+                   elevation="0"
+                   @click="limparCarrinho">Esvaziar Carrinho</v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-footer>
+  </v-app>
+  <v-dialog
+      v-model="modalPix"
+      transition="dialog-bottom-transition"
+  >
+  <template v-slot:default="{ isActive }">
+    <v-card title="Pix">
+      <v-card-text align="center">
+        <v-img :src="qrcode"
+               max-height="300px"></v-img>
+        <v-form>
+          <v-text-field label="deixa uma mensagem"
+                        v-model="mensagem"
+                        @keyup="gerar_qrcode"></v-text-field>
+        </v-form>
+        <span class="d-block mb-3">
+          {{ total }}
+        </span>
+        <v-btn v-if="isSupported"
+               color="eric"
+               @click="copiar">Copiar Código Pix</v-btn>
+        <div v-else>
+          <v-textarea v-model="copia"
+                      label="Não suportado, copie diretamente por aqui:"
+                      readonly></v-textarea>
+        </div>
+      </v-card-text>
+
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn flat
+               text="Fechar"
+               color="grey-lighten-2"
+               @click="isActive.value = false"
+        ></v-btn>
+      </v-card-actions>
+    </v-card>
+  </template>
+  </v-dialog>
+  <v-snackbar
+      v-model="resultado_copia"
+  >
+      {{ resultado_copia }}
+
+      <template v-slot:actions>
+        <v-btn
+            color="red"
+            variant="text"
+            @click="resultado_copia = null"
+        >
+          fechar
+        </v-btn>
+      </template>
+  </v-snackbar>
+</template>
+
+<script>
+
+import {useClipboard} from '@vueuse/core'
+import Presente from "./components/Presente.vue"
+import {moeda} from "./filter.js"
+import {QrCodePix} from 'qrcode-pix';
+
+export default {
+  name: 'App',
+  components: {
+    Presente
+  },
+  data: () => ({
+    modalPix: false,
+    qrcode: null,
+    copia: null,
+    isSupported: true,
+    mensagem: "",
+    resultado_copia: false,
+    presentes: [
+      {nome: 'Pampers Premium Care P 40', icone: 'premiumP40.jpg', qtd: 0, valor: 64.90},
+      {nome: 'Pampers Premium Care M 80', icone: 'premiumM80.jpg', qtd: 0, valor: 119.90},
+      {nome: 'Pampers Premium Care G 30', icone: 'premiumG30.jpg', qtd: 0, valor: 74.90},
+      {nome: 'Pampers Premium Care XG 26', icone: 'premiumXG26.jpg', qtd: 0, valor: 68.90},
+    ],
+    fotos: [
+      {src: "casal.jpg"},
+      {src: "IMG_3402-pra-postar.jpg"},
+      {src: "IMG_3422-pra-postar.jpg"},
+      {src: "IMG_3431-pra-postar.jpg"},
+      {src: "IMG_3444-pra-postar.jpg"},
+      {src: "IMG_3464-pra-postar.jpg"},
+      {src: "IMG_3488-pra-postar.jpg"},
+      {src: "IMG_3535-pra-postar.jpg"},
+      {src: "IMG_3539-pra-postar.jpg"},
+      {src: "IMG_3571-pra-postar.jpg"},
+      {src: "IMG_3585-pra-postar.jpg"},
+    ]
+  }),
+
+  computed: {
+    valor() {
+      return this.presentes.reduce((a, i) => a + (i.qtd * i.valor), 0)
+    },
+    total() {
+      return moeda(this.valor)
+    },
+  },
+
+  methods: {
+    async gerar_qrcode() {
+      const code = QrCodePix({
+        version: '01',
+        key: '11390306712', //or any PIX key
+        name: 'Ezequiel Bertti',
+        city: 'Rio de Janeiro',
+        // transactionId: 'bb', //max 25 characters
+        message: this.mensagem,
+        cep: '22280010',
+        value: this.valor,
+      });
+      this.qrcode = await code.base64()
+      this.copia = code.payload()
+    },
+    limparCarrinho() {
+      this.qrcode = null
+      this.copia = null
+      this.presentes.forEach((i) => i.qtd = 0)
+    },
+    linkPix() {
+      this.gerar_qrcode()
+      this.modalPix = true
+    },
+    copiar() {
+      const {text, copy, copied, isSupported} = useClipboard({source: this.copia})
+      this.isSupported = isSupported
+      if (copied) {
+        this.resultado_copia = "Abra o app do seu banco, e cole o pix"
+      }
+    }
+  },
+}
+</script>
+
+<style></style>

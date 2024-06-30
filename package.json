@@ -1,0 +1,23 @@
+{
+  "name": "eric",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "10.11.0",
+    "buffer": "6.0.3",
+    "qrcode-pix": "5.0.0",
+    "vite-plugin-vuetify": "2.0.3",
+    "vue": "3.4.27",
+    "vuetify": "3.6.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.0"
+  }
+}
