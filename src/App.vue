@@ -13,10 +13,13 @@
               Devo chegar lá pelo dia 15 de julho.
             </span>
           </v-col>
-          <v-col cols="12" sm="6">
-
-            <v-carousel cycle hide-delimiters>
-              <v-carousel-item v-for="foto in fotos" :src="foto.src" cover></v-carousel-item>
+          <v-col cols="12"
+                 sm="6">
+            <v-carousel cycle
+                        hide-delimiters>
+              <v-carousel-item v-for="foto in fotos"
+                               :src="foto.src"
+                               cover></v-carousel-item>
             </v-carousel>
           </v-col>
         </v-row>
@@ -76,19 +79,22 @@
         <v-form>
           <v-text-field label="deixa uma mensagem"
                         v-model="mensagem"
+                        maxlength="50"
+                        counter
                         @keyup="gerar_qrcode"></v-text-field>
         </v-form>
         <span class="d-block mb-3">
           {{ total }}
         </span>
+
+          <v-textarea ref="cc"
+                      v-model="copia"
+                      label="Não suportado, copie diretamente por aqui:"
+                      readonly></v-textarea>
         <v-btn v-if="isSupported"
                color="eric"
                @click="copiar">Copiar Código Pix</v-btn>
-        <div v-else>
-          <v-textarea v-model="copia"
-                      label="Não suportado, copie diretamente por aqui:"
-                      readonly></v-textarea>
-        </div>
+
       </v-card-text>
 
       <v-card-actions>
@@ -172,7 +178,7 @@ export default {
     async gerar_qrcode() {
       const code = QrCodePix({
         version: '01',
-        key: '11390306712', //or any PIX key
+        key: '1c02f9b8-d322-4287-a258-62599f63756f', //or any PIX key
         name: 'Ezequiel Bertti',
         city: 'Rio de Janeiro',
         // transactionId: 'bb', //max 25 characters
@@ -193,8 +199,10 @@ export default {
       this.modalPix = true
     },
     copiar() {
+      navigator.clipboard.writeText(this.copia)
       const {text, copy, copied, isSupported} = useClipboard({source: this.copia})
       this.isSupported = isSupported
+      console.log(text.value)
       if (copied) {
         this.resultado_copia = "Abra o app do seu banco, e cole o pix"
       }
