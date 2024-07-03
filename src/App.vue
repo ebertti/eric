@@ -28,7 +28,7 @@
                   Fotografa do ensaio: <a href="https://www.instagram.com/tatifelixfotografia/">@tatifelixfotografia</a>
                 </v-list-item>
                 <v-list-item>
-                  Fotografa do Parto: <a href="https://www.instagram.com/beatrizmarquesfotografia/">@beatrizmarquesfotografia</a>
+                  Fotografa do parto: <a href="https://www.instagram.com/beatrizmarquesfotografia/">@beatrizmarquesfotografia</a>
                 </v-list-item>
               </v-list>
             </div>
