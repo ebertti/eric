@@ -13,6 +13,27 @@
             </div>
             <div class="my-5">
               Devo chegar lá pelo dia 15 de julho. No hospital Gloria D’Or, no Rio de Janeiro.
+              Vou ser um dos poucos cariocas com bom gosto, grêmista de berço.
+            </div>
+            <div class="d-block my-5">
+              <h3>Links uteis</h3>
+              <v-list class="list">
+                <v-list-item class="item">
+                  Perinatal no Glória D’or: <a href="https://www.instagram.com/grupo.perinatal/">@grupo.perinatal</a>
+                </v-list-item>
+                <v-list-item>
+                  Equipe Nascer Carioca: <a href="https://www.instagram.com/nascercarioca/">@nascercarioca</a>
+                </v-list-item>
+                <v-list-item>
+                  Fotografa do ensaio: <a href="https://www.instagram.com/tatifelixfotografia/">@tatifelixfotografia</a>
+                </v-list-item>
+                <v-list-item>
+                  Fotografa do Parto: <a href="https://www.instagram.com/beatrizmarquesfotografia/">@beatrizmarquesfotografia</a>
+                </v-list-item>
+              </v-list>
+            </div>
+            <div class="my-5">
+              Devo chegar lá pelo dia 15 de julho. No hospital Gloria D’Or, no Rio de Janeiro.
               Vou ser um dos poucos cariocas com bom gosto, grêmista de berço 🇪🇪.
             </div>
             <div class="d-block my-5">
