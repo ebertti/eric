@@ -33,13 +33,9 @@
               </v-list>
             </div>
           </v-col>
-          <v-col cols="12"
-                 sm="6">
-            <v-carousel cycle
-                        hide-delimiters>
-              <v-carousel-item v-for="foto in fotos"
-                               :src="foto.src"
-                               cover></v-carousel-item>
+          <v-col sm="6">
+            <v-carousel cycle hide-delimiters>
+              <v-carousel-item v-for="foto in fotos" :src="foto.src"></v-carousel-item>
             </v-carousel>
           </v-col>
         </v-row>
