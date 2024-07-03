@@ -6,12 +6,32 @@
           <v-col cols="12"
                  sm="6"
                  class="mb-5 mb-sm-0">
-            <span class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</span>
-            <span class="d-block my-5">
+            <div class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</div>
+            <div class="d-block my-5">
               Ainda estou na barriga da mamãe 🤰, mas já dá pra ver que sou a carinha do papai 🦸‍️.
               E tá tudo bem, porque a mamãe acha o papai lindo 😍, como ela mesma diz o tempo todo.
-              Devo chegar lá pelo dia 15 de julho.
-            </span>
+            </div>
+            <div class="my-5">
+              Devo chegar lá pelo dia 15 de julho. No hospital Gloria D’Or, no Rio de Janeiro.
+              Vou ser um dos poucos cariocas com bom gosto, grêmista de berço.
+            </div>
+            <div class="d-block my-5">
+              <h3>Links uteis</h3>
+              <v-list class="list">
+                <v-list-item class="item">
+                  Perinatal no Glória D’or: <a href="https://www.instagram.com/grupo.perinatal/">@grupo.perinatal</a>
+                </v-list-item>
+                <v-list-item>
+                  Equipe Nascer Carioca: <a href="https://www.instagram.com/nascercarioca/">@nascercarioca</a>
+                </v-list-item>
+                <v-list-item>
+                  Fotografa do ensaio: <a href="https://www.instagram.com/tatifelixfotografia/">@tatifelixfotografia</a>
+                </v-list-item>
+                <v-list-item>
+                  Fotografa do Parto: <a href="https://www.instagram.com/beatrizmarquesfotografia/">@beatrizmarquesfotografia</a>
+                </v-list-item>
+              </v-list>
+            </div>
           </v-col>
           <v-col cols="12"
                  sm="6">
