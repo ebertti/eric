@@ -205,7 +205,8 @@ export default {
   },
 
   mounted(){
-    fetch('https://script.google.com/macros/s/AKfycbzK2324XIb1ejnsccvuufcq9Aj4nruz9LN0c1oJB7YWjYKhYq_a9uVleaxbqZCupQlgzA/exec', {mode: 'no-cors'})
+    const url = 'https://script.google.com/macros/s/AKfycbzK2324XIb1ejnsccvuufcq9Aj4nruz9LN0c1oJB7YWjYKhYq_a9uVleaxbqZCupQlgzA/exec'
+    fetch(url)
         .then(response => response.json())
         .then(data => this.amigos = data.data)
 
