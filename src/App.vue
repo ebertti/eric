@@ -8,6 +8,10 @@
                  class="mb-5 mb-sm-0">
             <div class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</div>
             <div class="d-block my-5">
+              A grande pergunta que você deve estar se fazendo:
+
+              <h3 class="my-3">resposta: Ainda não :)</h3>
+
               Ainda estou na barriga da mamãe 🤰, mas já dá pra ver que sou a carinha do papai 🦸‍️.
               E tá tudo bem, porque a mamãe acha o papai lindo 😍, como ela mesma diz o tempo todo.
             </div>
