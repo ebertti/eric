@@ -44,6 +44,15 @@
           </v-col>
         </v-row>
       </v-container>
+      <v-container>
+        <h2 class="d-block pa-5 mb-5 gochi-hand-regular bg-eric rounded-5 text-center">Meus Novos Amigos</h2>
+        <ul class="cloud">
+          <li v-for="amigo in amigos"><a :data-weight="amigo.tamanho">{{ amigo.nome }}</a></li>
+        </ul>
+
+      </v-container>
+
+
       <v-container class="bg-orange-lighten-4">
         Como você pode imaginar, vou precisar de muitas fraldas nesses primeiros anos de vida. Então, se quiser ajudar
         minha mamãe e meu papai, veja a listinha de fraldas e faça um pix 🙊
@@ -158,6 +167,7 @@ export default {
     Presente
   },
   data: () => ({
+    amigos: [],
     modalPix: false,
     qrcode: null,
     copia: null,
@@ -193,6 +203,25 @@ export default {
       return moeda(this.valor)
     },
   },
+
+  mounted(){
+    fetch('https://script.google.com/macros/library/d/1L-Pq1LQMgiujJaexCdi7iPJOEbYGFpSILR4J1_Q8dq3Xi0mowxS49uRQ/1', {mode: 'no-cors'})
+        .then(response => response.json())
+        .then(data => this.amigos = data.data)
+
+    if(this.amigos.length === 0 ){
+        this.amigos = [
+          {"nome": "Ariel S","tamanho": 2},
+          {"nome": "Felipe W", "tamanho": 2},
+          {"nome": "Dalvo R", "tamanho": 2},
+          {"nome": "Rodrigo S", "tamanho": 5},
+          {"nome": "Patrick","tamanho": 1},
+          {"nome": "PS", "tamanho": 2},
+          {"nome": "Matheus","tamanho": 1}
+      ]
+    }
+  },
+
 
   methods: {
     async gerar_qrcode() {
@@ -231,4 +260,83 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+ul.cloud {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 2.75rem;
+  width: 100%;
+}
+
+ul.cloud a {
+  /*
+  Not supported by any browser at the moment :(
+  --size: attr(data-weight number);
+  */
+  --size: 4;
+  --color: #a33;
+  color: var(--color);
+  font-size: calc(var(--size) * 0.25rem + 0.5rem);
+  display: block;
+  padding: 0.125rem 0.25rem;
+  position: relative;
+  text-decoration: none;
+  /*
+  For different tones of a single color
+  opacity: calc((15 - (9 - var(--size))) / 15);
+  */
+}
+
+ul.cloud a[data-weight="1"] { --size: 2; }
+ul.cloud a[data-weight="2"] { --size: 3; }
+ul.cloud a[data-weight="3"] { --size: 4; }
+ul.cloud a[data-weight="4"] { --size: 5; }
+ul.cloud a[data-weight="5"] { --size: 7; }
+ul.cloud a[data-weight="6"] { --size: 9; }
+ul.cloud a[data-weight="7"] { --size: 11; }
+ul.cloud a[data-weight="8"] { --size: 14; }
+ul.cloud a[data-weight="9"] { --size: 17; }
+
+ul[data-show-value] a::after {
+  content: " (" attr(data-weight) ")";
+  font-size: 1rem;
+}
+
+ul.cloud li:nth-child(2n+1) a { --color: #181; }
+ul.cloud li:nth-child(3n+1) a { --color: #33a; }
+ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+
+ul.cloud a:focus {
+  outline: 1px dashed;
+}
+
+ul.cloud a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: var(--color);
+  transform: translate(-50%, 0);
+  opacity: 0.15;
+  transition: width 0.25s;
+}
+
+ul.cloud a:focus::before,
+ul.cloud a:hover::before {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion) {
+  ul.cloud * {
+    transition: none !important;
+  }
+}
+
+</style>
