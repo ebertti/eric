@@ -3,15 +3,11 @@
     <v-main class="white">
       <v-container>
         <v-row align="center">
-          <v-col cols="12"
-                 sm="6"
-                 class="mb-5 mb-sm-0">
+          <v-col cols="12" sm="6" class="mb-5 mb-sm-0">
             <div class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</div>
             <div class="d-block my-5">
               A grande pergunta que você deve estar se fazendo:
-
               <h3 class="my-3">resposta: Ainda não :)</h3>
-
               Ainda estou na barriga da mamãe 🤰, mas já dá pra ver que sou a carinha do papai 🦸‍️.
               E tá tudo bem, porque a mamãe acha o papai lindo 😍, como ela mesma diz o tempo todo.
             </div>
@@ -46,51 +42,52 @@
       </v-container>
       <v-container>
         <h2 class="d-block pa-5 mb-5 gochi-hand-regular bg-eric rounded-5 text-center">Meus Novos Amigos</h2>
-        <ul class="cloud">
+        <ul v-if="amigos.length >= 1" class="cloud" >
           <li v-for="amigo in amigos"><a :data-weight="amigo.tamanho">{{ amigo.nome }}</a></li>
         </ul>
-
+        <v-progress-linear v-else color="eric" indeterminate></v-progress-linear>
       </v-container>
-
-
       <v-container class="bg-orange-lighten-4">
         Como você pode imaginar, vou precisar de muitas fraldas nesses primeiros anos de vida. Então, se quiser ajudar
         minha mamãe e meu papai, veja a listinha de fraldas e faça um pix 🙊
       </v-container>
-
       <v-container>
             <h2 class="d-block pa-5 mb-5 gochi-hand-regular bg-eric rounded-5 text-center">Minha Listinha</h2>
         <v-row>
-          <v-col cols="12"
-                 md="4"
-                 sm="6"
-                 v-for="presente in presentes"
-                 :key="presente.nome">
+          <v-col
+              cols="12"
+              md="4"
+              sm="6"
+              v-for="presente in presentes"
+              :key="presente.nome">
             <presente :presente="presente"></presente>
           </v-col>
         </v-row>
       </v-container>
     </v-main>
-
-    <v-footer app
-              class="button py-0 bg-grey-lighten-4"
-              v-if="valor">
+    <v-footer
+        app
+        class="button py-0 bg-grey-lighten-4"
+        v-if="valor">
       <v-container>
         <v-row>
-          <v-col cols="12"
-                 class="d-flex flex-column flex-sm-row">
+          <v-col
+              cols="12"
+              class="d-flex flex-column flex-sm-row">
             <div class="flex-grow-1  mr-sm-2 rounded text-center">
               <span class="d-inline-block  font-weight-bold">{{ total }}</span>
             </div>
-            <v-btn class="mb-2 mb-md-0 mr-2 white--text font-weight-bold"
-                   color="green"
-                   elevation="0"
-                   @click="linkPix">Fazer um Pix</v-btn>
-            <v-btn class="mb-2 mb-md-0 mr-md-2 font-weight-bold"
-                   color="grey-lighten-2"
-                   outlined
-                   elevation="0"
-                   @click="limparCarrinho">Esvaziar Carrinho</v-btn>
+            <v-btn
+                class="mb-2 mb-md-0 mr-2 white--text font-weight-bold"
+                color="green"
+                elevation="0"
+                @click="linkPix">Fazer um Pix</v-btn>
+            <v-btn
+                class="mb-2 mb-md-0 mr-md-2 font-weight-bold"
+                color="grey-lighten-2"
+                outlined
+                elevation="0"
+                @click="limparCarrinho">Esvaziar Carrinho</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -106,42 +103,43 @@
         <v-img :src="qrcode"
                max-height="300px"></v-img>
         <v-form>
-          <v-text-field label="deixa uma mensagem"
-                        v-model="mensagem"
-                        maxlength="50"
-                        counter
-                        @keyup="gerar_qrcode"></v-text-field>
+          <v-text-field
+              label="deixa uma mensagem"
+              v-model="mensagem"
+              maxlength="50"
+              counter
+              @keyup="gerar_qrcode"></v-text-field>
         </v-form>
         <span class="d-block mb-3">
           {{ total }}
         </span>
 
-          <v-textarea ref="cc"
-                      v-model="copia"
-                      label="Não suportado, copie diretamente por aqui:"
-                      readonly></v-textarea>
-        <v-btn v-if="isSupported"
-               color="eric"
-               @click="copiar">Copiar Código Pix</v-btn>
+          <v-textarea
+              ref="cc"
+              v-model="copia"
+              label="Não suportado, copie diretamente por aqui:"
+              readonly></v-textarea>
+        <v-btn
+            v-if="isSupported"
+            color="eric"
+            @click="copiar">Copiar Código Pix</v-btn>
 
       </v-card-text>
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn flat
-               text="Fechar"
-               color="grey-lighten-2"
-               @click="isActive.value = false"
+        <v-btn
+            flat
+            text="Fechar"
+            color="grey-lighten-2"
+            @click="isActive.value = false"
         ></v-btn>
       </v-card-actions>
     </v-card>
   </template>
   </v-dialog>
-  <v-snackbar
-      v-model="resultado_copia"
-  >
+  <v-snackbar v-model="resultado_copia">
       {{ resultado_copia }}
-
       <template v-slot:actions>
         <v-btn
             color="red"
@@ -204,23 +202,11 @@ export default {
     },
   },
 
-  mounted(){
+  mounted() {
     const url = 'https://script.google.com/macros/s/AKfycbzK2324XIb1ejnsccvuufcq9Aj4nruz9LN0c1oJB7YWjYKhYq_a9uVleaxbqZCupQlgzA/exec'
     fetch(url)
         .then(response => response.json())
         .then(data => this.amigos = data.data)
-
-    if(this.amigos.length === 0 ){
-        this.amigos = [
-          {"nome": "Ariel S","tamanho": 2},
-          {"nome": "Felipe W", "tamanho": 2},
-          {"nome": "Dalvo R", "tamanho": 2},
-          {"nome": "Rodrigo S", "tamanho": 5},
-          {"nome": "Patrick","tamanho": 1},
-          {"nome": "PS", "tamanho": 2},
-          {"nome": "Matheus","tamanho": 1}
-      ]
-    }
   },
 
 
@@ -293,24 +279,58 @@ ul.cloud a {
   */
 }
 
-ul.cloud a[data-weight="1"] { --size: 2; }
-ul.cloud a[data-weight="2"] { --size: 3; }
-ul.cloud a[data-weight="3"] { --size: 4; }
-ul.cloud a[data-weight="4"] { --size: 5; }
-ul.cloud a[data-weight="5"] { --size: 7; }
-ul.cloud a[data-weight="6"] { --size: 9; }
-ul.cloud a[data-weight="7"] { --size: 11; }
-ul.cloud a[data-weight="8"] { --size: 14; }
-ul.cloud a[data-weight="9"] { --size: 17; }
+ul.cloud a[data-weight="1"] {
+  --size: 2;
+}
+
+ul.cloud a[data-weight="2"] {
+  --size: 3;
+}
+
+ul.cloud a[data-weight="3"] {
+  --size: 4;
+}
+
+ul.cloud a[data-weight="4"] {
+  --size: 5;
+}
+
+ul.cloud a[data-weight="5"] {
+  --size: 7;
+}
+
+ul.cloud a[data-weight="6"] {
+  --size: 9;
+}
+
+ul.cloud a[data-weight="7"] {
+  --size: 11;
+}
+
+ul.cloud a[data-weight="8"] {
+  --size: 14;
+}
+
+ul.cloud a[data-weight="9"] {
+  --size: 17;
+}
 
 ul[data-show-value] a::after {
   content: " (" attr(data-weight) ")";
   font-size: 1rem;
 }
 
-ul.cloud li:nth-child(2n+1) a { --color: #181; }
-ul.cloud li:nth-child(3n+1) a { --color: #33a; }
-ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+ul.cloud li:nth-child(2n+1) a {
+  --color: #181;
+}
+
+ul.cloud li:nth-child(3n+1) a {
+  --color: #33a;
+}
+
+ul.cloud li:nth-child(4n+1) a {
+  --color: #c38;
+}
 
 ul.cloud a:focus {
   outline: 1px dashed;
