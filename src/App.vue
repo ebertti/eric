@@ -181,6 +181,22 @@ export default {
       {src: "086a6fa5-4bf0-4a36-96c3-4d41cc8f22da.jpeg"},
       {src: "900a1bb3-a4dc-49ef-ae12-e3dda47f13ea.jpeg"},
       
+ {src: "7fbf48dc-e960-46c5-b22f-0f36ac6249de.jpeg"},
+ {src: "900a1bb3-a4dc-49ef-ae12-e3dda47f13ea.jpeg"},
+ {src: "c075c676-d123-4cd2-978e-da796c137721.jpeg"},
+ {src: "ee07c60d-ec26-4ead-8181-77724d6d1d84.jpeg"},
+ {src: "f437fb7d-b7a8-4f80-a9bd-0b4b0512e41b.jpeg"},
+ {src: "f22b134b-2f2c-4edf-80d2-eeb58117b03f.jpeg"},
+ {src: "e026e03b-2c1a-4ef8-b17a-cd6bf7925a25.jpeg"},
+ {src: "e026e03b-2c1a-4ef8-b17a-cd6bf7925a25.jpeg"},
+ {src: "70f2b6f6-1b74-48b3-bc1f-4a833ecaecc0.jpeg"},
+ {src: "0b64910a-b120-45b0-b232-b1b6f4edade6.jpeg"},
+ {src: "747cd0d0-d295-40c1-a0e0-9ce0cd6fd900.jpeg"},
+ {src: "8ec89047-d951-4fa5-a491-99187eba8099.jpeg"},
+ {src: "d560098c-ffd8-4129-9a23-c71c75a23969.jpeg"},
+ {src: "e243cfc2-3ed9-4158-a484-6db1c3d6ab48.jpeg"},
+
+
       
       {src: "casal.jpg"},
       {src: "IMG_3402-pra-postar.jpg"},
