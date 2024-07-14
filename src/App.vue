@@ -8,18 +8,20 @@
             <div class="d-block my-5">
               Cheguei 13/07/2024 as 9h45 com 2,715kg com 45cm
               Já fiz meu primeiro commit e deploy. Passei em todos os testes unitários da maternidade.
-              O CI/CD não funcinou como esperado. O trabalho de parto demorou 48h. Mas L3 foi acioando e tudo foi resolvido com um
-              hot-fix em produção. Papai falou que sou junior mas com coragem de Senior. 
+              O CI/CD não funcinou como esperado. O trabalho de parto demorou 48h. Mas L3 foi acionado e tudo foi resolvido com um
+              hot-fix em produção. Papai falou que sou junior mas com coragem de senior. 
               Mamãe queria que eu fosse a cara do papai, mas como não sou bobo, vim a cara da mamãe.
               Papai tem até seu charme. Mas minha mamãe que é linda.
             </div>
             <div class="d-block my-5 bg-orange-lighten-4">
               <h3>Relato da mamãe</h3>
-              Eric nasceu às 9:45 de hj 
-Depois de mais de 48h em trabalho de parto (contrações desde o dia 11) fizemos uma cesárea de emergência pq os batimentos cardíacos dele estavam diminuindo ao fazer exercícios para encaixar 
-As contrações começaram logo q pegamos minha mae no aeroporto, na linha vermelha.
-Ele estava só esperando a vovó.
-Foi frustrante não conseguir o parto vaginal após sofrer por 48h mas no final foi lindo.
+              Eric nasceu às 9:45 do dia 13/07 com 45 cm 2.715 kg após 39 longas semanas de gestação rs 
+As contrações começaram no dia 11 logo que pegamos minha mae no aeroporto, na linha vermelha por volta de 7 da manhã 
+Ele estava só esperando a vovó chegar 
+Depois de mais de 48h entre trabalho de parto latente e ativo a bolsa não havia estourado ainda com 6 cm de dilatação.
+Então a médica a rompeu e havia mecônio. Foi preciso uma cesárea de emergência pq alem disso, os batimentos cardíacos dele estavam diminuindo.
+Foi frustrante não conseguir o parto vaginal após sofrer por 48h mas no final foi lindo. Valeu a pena o processo. 
+Eric nasceu lindo e saudável, e se parece com a mamãe. Papai Ezequiel foi um parceiro incrível nessa jornada, que sorte a nossa. Obrigada também a equipe @nascercarioca e @beatrizmarquesfotografia.
             </div>
             <div class="d-block my-5">
               <h3>Links úteis</h3>
