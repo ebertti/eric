@@ -6,14 +6,11 @@
           <v-col cols="12" sm="6" class="mb-5 mb-sm-0">
             <div class="d-block text-h2 title--text mb-5 gochi-hand-regular">Falae pessoal,<br />aqui é o Eric!</div>
             <div class="d-block my-5">
-              A grande pergunta que você deve estar se fazendo:
-              <h3 class="my-3">resposta: Ainda não :)</h3>
-              Ainda estou na barriga da mamãe 🤰, mas já dá pra ver que sou a carinha do papai 🦸‍️.
-              E tá tudo bem, porque a mamãe acha o papai lindo 😍, como ela mesma diz o tempo todo.
-            </div>
-            <div class="my-5">
-              Devo chegar lá pelo dia 15 de julho. No hospital Gloria D’Or, no Rio de Janeiro.
-              Vou ser um dos poucos cariocas com bom gosto, grêmista de berço 🇪🇪.
+              Cheguei 13/07/2024 as 9h45 com 2,715kg com 45cm
+              Já fiz meu primeiro commit e deploy. Passei em todos os testes unitários da maternidade.
+              O plano de deploy não funcinou como esperado. O trabalho de parto demorou 48h. Mas depois conto os detalhes.
+              Mamãe queria que eu fosse a cara do papai, mas como não sou bobo, vim a cara da mamãe.
+              Papai tem até seu charme. Mas minha mamãe que é linda.
             </div>
             <div class="d-block my-5">
               <h3>Links úteis</h3>
