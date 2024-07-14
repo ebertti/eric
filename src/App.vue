@@ -176,6 +176,12 @@ export default {
       {nome: 'Pampers Premium Care XG 26', icone: 'premiumXG26.jpg', qtd: 0, valor: 68.90},
     ],
     fotos: [
+      {src: "10acff7a-5357-42c5-93f6-75a5e7009939.jpeg"},
+      {src: "2049b268-30a3-4851-96b5-a3eea7cbabcf.jpeg"},
+      {src: "086a6fa5-4bf0-4a36-96c3-4d41cc8f22da.jpeg"},
+      {src: "900a1bb3-a4dc-49ef-ae12-e3dda47f13ea.jpeg"},
+      
+      
       {src: "casal.jpg"},
       {src: "IMG_3402-pra-postar.jpg"},
       {src: "IMG_3422-pra-postar.jpg"},
