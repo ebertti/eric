@@ -114,7 +114,7 @@ Eric nasceu lindo e saudável, e se parece com a mamãe. Papai Ezequiel foi um p
           <v-text-field
               label="deixa uma mensagem"
               v-model="mensagem"
-              maxlength="50"
+              maxlength="35"
               counter
               @keyup="gerar_qrcode"></v-text-field>
         </v-form>
